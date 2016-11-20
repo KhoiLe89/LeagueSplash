@@ -5,7 +5,12 @@
     <title></title>
   </head>
   <body>
-    {{championData.data.Jax.image.full}}
-    {{championData.data.Jax.name}}
+    {{champions}}
+    {{champions.Jax.name}}
+
+      {{#each champions }}
+    <h3>{{@key}} {{this.image.full}}</h3>
+    {{/each}}
+
   </body>
 </html>
