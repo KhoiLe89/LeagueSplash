@@ -1,7 +1,17 @@
-{
-    "name": "Aatrox",
-    "skins":
-    [ {"nameOfSkin": "Justicar Aatrox", "skinImage": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-justicar.jpg", "price": 975, "releaseDate": "June 13, 2013"},
-      {"nameOfSkin": "Mecha Aatrox", "skinImage": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-mecha.jpg", "price": 1350, "releaseDate": "July 24, 2014"}
-    ]
-}
+[
+  {
+      "name": "Aatrox",
+      "skins":
+      [ {"nameOfSkin": "Justicar Aatrox", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-justicar.jpg", "price": 975, "releaseDate": "June 13, 2013"},
+        {"nameOfSkin": "Mecha Aatrox", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-mecha.jpg", "price": 1350, "releaseDate": "July 24, 2014"}
+      ]
+    },
+    {
+      "name": "Jax",
+      "skins":
+      [
+        {"nameOfSkin": "The Might Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-the-mighty.jpg", "price": 520, "releaseDate": "March 2, 2010"},
+        {"nameOfSkin": "Vandal Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-vandal.jpg", "price": 520, "releaseDate": "Februrary 24, 2010"}
+      ]
+    }
+]
