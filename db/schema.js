@@ -1,17 +1,19 @@
 var mongoose = require("./connection.js")
-var Schema = mongoose.Schema
+// var Schema = mongoose.Schema
 
-var SkinSchema = new Schema([{
+var SkinSchema = mongoose.Schema({
   nameOfSkin: String,
-  skinImg: String
-}])
-var ChampionSchema = new Schema({
+  skinImg: String,
+  price: Number,
+  releaseDate: String
+})
+var ChampionSchema = mongoose.Schema({
   name: String,
   skins: [SkinSchema]
 })
 
-var Champion = mongoose.model("Champion", ChampionSchema)
 var Skin = mongoose.model("Skin", SkinSchema)
+var Champion = mongoose.model("Champion", ChampionSchema)
 
 
 //THE FOLLOWING is dummy data to test.

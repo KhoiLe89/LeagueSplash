@@ -1,7 +1,7 @@
 {
     "name": "Aatrox",
     "skins":
-    [ {"nameOfSkin": "Justicar Aatrox", "skinImage": "JusticarAatrox.png"},
-      {"nameOfSkin": "Mecha Aatrox", "skinImage": "MechaAatrox.png"}
+    [ {"nameOfSkin": "Justicar Aatrox", "skinImage": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-justicar.jpg", "price": 975, "releaseDate": "June 13, 2013"},
+      {"nameOfSkin": "Mecha Aatrox", "skinImage": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-mecha.jpg", "price": 1350, "releaseDate": "July 24, 2014"}
     ]
 }

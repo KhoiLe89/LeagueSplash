@@ -2,6 +2,11 @@ var express = require("express")
 var app = express()
 var hbs = require("hbs")
 var request = require("request")
+var mongoose = require("./db/connection.js")
+var SkinSchema = require("./db/schema.js")
+var ChampionSchema = require("./db/schema.js")
+var Skin = mongoose.model("Skin")
+var Champion = mongoose.model("Champion", ChampionSchema)
 
 app.set("view engine", "hbs")
 
@@ -15,6 +20,9 @@ app.get("/", (req, res) => {
    request(url, function(err, response, body) {
      var championData = JSON.parse(body);
      var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
+     Champion.find({}).then(champion => {
+       console.log(champion)
+     })
      res.render("home", {champions: championData.data, championPic: championPic})
    })
 })

@@ -1,8 +1,9 @@
+var mongoose = require("./connection.js")
 var Schema = require("./schema.js")
 var seedData = require("./seeds.json")
 
-var Champion = Schema.Champion
-var Skin = Schema.Skin
+var Champion = mongoose.model("Champion")
+var Skin = mongoose.model("Skin")
 
 
 Champion.remove({}).then(() => {
