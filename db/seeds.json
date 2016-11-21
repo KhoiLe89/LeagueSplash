@@ -1,0 +1,7 @@
+{
+    "name": "Aatrox",
+    "skins":
+    [ {"nameOfSkin": "Justicar Aatrox", "skinImage": "JusticarAatrox.png"},
+      {"nameOfSkin": "Mecha Aatrox", "skinImage": "MechaAatrox.png"}
+    ]
+}
