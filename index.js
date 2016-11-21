@@ -2,11 +2,8 @@ var express = require("express")
 var app = express()
 var hbs = require("hbs")
 var request = require("request")
-var mongoose = require("./db/connection.js")
-var SkinSchema = require("./db/schema.js")
-var ChampionSchema = require("./db/schema.js")
-var Skin = mongoose.model("Skin")
-var Champion = mongoose.model("Champion", ChampionSchema)
+var Skin = require("./db/schema.js").Skin
+var Champion = require("./db/schema.js").Champion
 
 app.set("view engine", "hbs")
 
