@@ -17,9 +17,47 @@ app.get("/", (req, res) => {
    request(url, function(err, response, body) {
      var championData = JSON.parse(body);
      var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
-     Champion.find({}).then(champion => {
-       console.log(champion)
+     var champions = championData.data
+     Champion.find({}).then((skinData) => {
+       let skinInfo = []
+       skinData.forEach(function (result) {
+         console.log(result)
+         if (result.name == champions.name){
+           console.log("working")
+         }
+         else {
+           console.log(champions)
+         }
+         result.skins.forEach((skinArrayKeys) => {
+
+          //  console.log(skinArrayKeys.skinImg)
+           skinInfo.push(skinArrayKeys)
+         })
+        //  console.log(skinImgs)
+
+      })
+// i have the array full of the skinData now.
+      // skinImgs.forEach()
+      res.render("home", {champions, championPic, skinData, skinInfo})
      })
-     res.render("home", {champions: championData.data, championPic: championPic})
    })
 })
+
+//need to set variables and access it in handlebars through a forEach loop here, rather than in views
+// Champion.find({}).then((skinData) => {
+//   skinData.forEach(function (result) {
+//    var skinArray = result.skins
+//    return skinArray.forEach((skinArrayKeys) => {
+//      var skinArrayKeys = skinArrayKeys
+//      console.log(skinArrayKeys.skinImg)
+//    })
+//  })
+//  res.render("home", {champions: championData.data, championPic: championPic, skinData: skinData})
+// })
+
+
+// function to reverse string
+
+// function reverse(str){
+//
+// }

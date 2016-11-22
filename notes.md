@@ -8,3 +8,6 @@ MongoDB
   I have all the skins from mobafire, now i need to be able to integrate it into a DB and link them to each respective JSON object from express.
 
 for each element in the array, print out the key and value(Aatrox skin model from men-lab)
+
+Next Step:
+  I have access to the skins in express. Now I need to place a conditional if the Champion name = SkinObject.name, print out all skinImg

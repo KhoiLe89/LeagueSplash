@@ -2,6 +2,7 @@ var mongoose = require("./connection.js")
 // var Schema = mongoose.Schema
 
 var SkinSchema = mongoose.Schema({
+  name: String,
   nameOfSkin: String,
   skinImg: String,
   price: Number,

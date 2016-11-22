@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    {{skinData}}
     {{champions}}
     {{champions.Jax.name}}
     {{championPic}}
@@ -12,6 +13,15 @@
     <h3>{{@key}} </h3>
     <img src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{this.image.full}}">
     {{/each}}
+    {{#each skinData}}
 
+    <h3> {{this.name}} </h3>
+      {{#each this.skins}}
+
+      <h3> {{this.skinImg}}</h3>
+
+      {{/each}}
+    {{/each}}
+{{skinInfo}}
   </body>
 </html>
