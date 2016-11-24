@@ -16,3 +16,7 @@ Next Step:
 I have each skin linked with each of the names in the name array.
 Now I have to print them out next to each name in the view.
 The problem now is that I can get the name of the name array to show, but the images from the API doesn't.
+How do i loop through keys of objects in handlebars?
+  loop through it in express with props and store both that and result props to an array and loop through that in handlebars?
+
+dont put var to make it global?

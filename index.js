@@ -19,22 +19,37 @@ app.get("/", (req, res) => {
      var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
      var champions = championData.data
      let championName = []
+     let championPics = []
      console.log(champions)
+     //for champion names
      for (var i in champions){
        var result = champions[i]
        for (var prop in result){
-
-      if (prop === "name"){
-        championName.push(result[prop])
-        var unique = championName.filter(function(elem, index, self) {
-          return index == self.indexOf(elem);
-        })
-        // console.log(championName)
-        // console.log(unique)
-      }
-      else{
-        console.log("nope")
-      }
+          if (prop === "name"){
+            championName.push(result[prop])
+            var unique = championName.filter(function(elem, index, self) {
+              return index == self.indexOf(elem);
+            })
+          }
+          else{
+            console.log("nope")
+          }
+       }
+     }
+     //for champion pictures
+     for (var i in champions){
+       var result = champions[i]
+       for (var prop in result){
+          if (prop === "image"){
+            championPics.push(result[prop])
+            var uniquePics = championPics.filter(function(elem, index, self) {
+              return index == self.indexOf(elem);
+            })
+            console.log(uniquePics)
+          }
+          else{
+            console.log("nope")
+          }
        }
      }
 
@@ -55,26 +70,15 @@ app.get("/", (req, res) => {
           for (var o in unique){
             if (unique[o]== skinInfo[i].name){
               console.log(unique[o] + " = " + skinInfo[i].skinImg) //unique[o] is each name in the array and skinInfo[i] is each object
+               unique[o] = skinInfo[i]
             }
           }
-
-
-
         }
-        // for (var i=0; i < unique.length; i++){
-        //
-        //   if(unique[i] == skinData.name ){
-        //     console.log(unique[i] + " = " + skinArrayKeys)
-        //   }
-        //   else{
-        //     console.log("didnt work")
-        //   }
-        // }
-
       })
-// i have the array full of the skinData now.
-      // skinImgs.forEach()
-      res.render("home", {champions, championPic, skinData, skinInfo, unique})
+
+
+
+      res.render("home", {champions, championPic, skinData, skinInfo, unique, uniquePics})
      })
    })
 })
@@ -97,3 +101,4 @@ app.get("/", (req, res) => {
 // function reverse(str){
 //
 // }
+// <img src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{">

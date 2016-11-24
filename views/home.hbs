@@ -5,15 +5,20 @@
     <title></title>
   </head>
   <body>
-    {{#each champions}}
-      {{@key}}
-    {{/each}}
     {{#each unique }}
-      <h3>{{this}} </h3>
+    <h3>  {{this.name}}</h3>
+        <img src="{{this.skinImg}}">
+      {{/each}}
+            {{#each skinData}}
 
-            <img src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{image.full}}">
 
-    {{/each}}
+              {{#each this.skins}}
+
+            <img src="{{this.skinImg}}">
+
+              {{/each}}
+            {{/each}}
+
     {{#each skinData}}
 
     <h3> {{this.name}} </h3>
@@ -24,6 +29,6 @@
       {{/each}}
     {{/each}}
 {{skinInfo}}
-{{unique}}
+
   </body>
 </html>

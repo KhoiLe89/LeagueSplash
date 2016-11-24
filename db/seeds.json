@@ -15,5 +15,45 @@
         {"name": "Jax", "nameOfSkin": "The Might Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-the-mighty.jpg", "price": 520, "releaseDate": "March 2, 2010"},
         {"name": "Jax", "nameOfSkin": "Vandal Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-vandal.jpg", "price": 520, "releaseDate": "Februrary 24, 2010"}
       ]
+    },
+    {
+      "name": "Ahri",
+      "skins":
+      [
+        {"name": "Ahri", "nameOfSkin": "Dynasty Ahri", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/ahri-dynasty.jpg", "price": 975, "releaseDate": "December 14, 2011"},
+        {"name": "Ahri", "nameOfSkin": "Midnight Ahri", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/ahri-midnight.jpg", "price": 750, "releaseDate": "December 14, 2011"}
+      ]
+    },
+    {
+      "name": "Akali",
+      "skins":
+      [
+        {"name": "Akali", "nameOfSkin": "Crimson Akali", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/akali-crimson.jpg", "price": 520, "releaseDate": "May 11, 2010"},
+        {"name": "Akali", "nameOfSkin": "Stinger Akali", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/akali-stinger.jpg", "price": 520, "releaseDate": "May 11, 2010"}
+      ]
+    },
+    {
+      "name": "Alistar",
+      "skins":
+      [
+        {"name": "Alistar", "nameOfSkin": "Black Alistar", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/alistar-black.jpg", "price": 0, "releaseDate": "July 14, 2009"},
+        {"name": "Alistar", "nameOfSkin": "Golden Alistar", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/alistar-golden.jpg", "price": 520, "releaseDate": "January 13, 2010"}
+      ]
+    },
+    {
+      "name": "Amumu",
+      "skins":
+      [
+        {"name": "Amumu", "nameOfSkin": "Pharaoh Amumu", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/amumu-pharaoh.jpg", "price": 520, "releaseDate": "Februrary 2, 2010"},
+        {"name": "Amumu", "nameOfSkin": "Vancouver Amumu", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/amumu-vancouver.jpg", "price": 520, "releaseDate": "Februrary 12, 2010"}
+      ]
+    },
+    {
+      "name": "Anivia",
+      "skins":
+      [
+        {"name": "Anivia", "nameOfSkin": "Team Spirit Anivia", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/anivia-team-spirit.jpg", "price": 520, "releaseDate": "March 2, 2010"},
+        {"name": "Anivia", "nameOfSkin": "Bird of Prey Anivia", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/anivia-bird-of-prey.jpg", "price": 520, "releaseDate": "May 3, 2010"}
+      ]
     }
 ]
