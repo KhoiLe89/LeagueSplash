@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title></title>
+  </head>
+  <body>
+    <h3>{{championData.name}}</h3>
+    <div class="skins_container">
+        {{#each championData.skins}}
+        <div class="skin_box">
+        <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img src="{{this.skinImg}}"></a>
+        RP: {{this.price}} Release Date: {{this.releaseDate}}
+      </div>
+        {{/each}}
+    <div>
+  </body>
+</html>

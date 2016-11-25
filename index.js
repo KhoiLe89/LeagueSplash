@@ -6,12 +6,13 @@ var Skin = require("./db/schema.js").Skin
 var Champion = require("./db/schema.js").Champion
 
 app.set("view engine", "hbs")
+app.use("/assets", express.static("public"));
 
 app.listen("3001", () => {
   console.log("express is working!")
 })
 
-app.get("/", (req, res) => {
+app.get("/champions", (req, res) => {
   console.log("working")
    var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
    request(url, function(err, response, body) {
@@ -70,7 +71,8 @@ app.get("/", (req, res) => {
           for (var o in unique){
             if (unique[o]== skinInfo[i].name){
               console.log(unique[o] + " = " + skinInfo[i].skinImg) //unique[o] is each name in the array and skinInfo[i] is each object
-               unique[o] = skinInfo[i]
+               unique[o] = skinInfo[i].skinImg
+
             }
           }
         }
@@ -83,22 +85,17 @@ app.get("/", (req, res) => {
    })
 })
 
-//need to set variables and access it in handlebars through a forEach loop here, rather than in views
-// Champion.find({}).then((skinData) => {
-//   skinData.forEach(function (result) {
-//    var skinArray = result.skins
-//    return skinArray.forEach((skinArrayKeys) => {
-//      var skinArrayKeys = skinArrayKeys
-//      console.log(skinArrayKeys.skinImg)
-//    })
-//  })
-//  res.render("home", {champions: championData.data, championPic: championPic, skinData: skinData})
-// })
-
-
-// function to reverse string
-
-// function reverse(str){
-//
-// }
-// <img src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{">
+app.get("/champions/:name", (req, res) => {
+  Champion.findOne({name: req.params.name}).then((championData) => {
+    res.render("champion", {
+      championData
+    })
+  })
+})
+app.get("/champions/:name/:nameOfSkin", (req, res) => {
+  Champion.find({name: req.params.name}).then((result) => {
+    res.render("skin", {
+      result
+    })
+  })
+})

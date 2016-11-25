@@ -1,0 +1,21 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+.skins_container{
+  /*border: 1px solid red;*/
+  height: 600px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+
+}
+.skin_box{
+  /*border: 1px solid red;*/
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
