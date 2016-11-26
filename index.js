@@ -109,3 +109,19 @@ app.get("/champions/:name/:nameOfSkin", (req, res) => {
     })
   })
 })
+
+app.get("/champions/:name/:nameOfSkin/spotlight", (req, res) => {
+  Champion.findOne({name: req.params.name}).then((result) => {
+  var resultSkins = result.skins
+    resultSkins.forEach(function (arrayItem) {
+      console.log(arrayItem.nameOfSkin)
+      if (arrayItem.nameOfSkin == req.params.nameOfSkin){
+        specificSkin = arrayItem
+      }
+    })
+    res.render("spotlight", {
+      result, specificSkin
+    })
+  })
+
+})

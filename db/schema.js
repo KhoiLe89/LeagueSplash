@@ -6,7 +6,8 @@ var SkinSchema = mongoose.Schema({
   nameOfSkin: String,
   skinImg: String,
   price: Number,
-  releaseDate: String
+  releaseDate: String,
+  spotlight: String
 })
 var ChampionSchema = mongoose.Schema({
   name: String,
