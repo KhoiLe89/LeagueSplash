@@ -92,10 +92,20 @@ app.get("/champions/:name", (req, res) => {
     })
   })
 })
+
+// i can get this page to render the speficic object of skins, but can't get the nameOfSkin parameter
 app.get("/champions/:name/:nameOfSkin", (req, res) => {
-  Champion.find({name: req.params.name}).then((result) => {
+  Champion.findOne({name: req.params.name}).then((result) => {
+  var resultSkins = result.skins
+    resultSkins.forEach(function (arrayItem) {
+      console.log(arrayItem.nameOfSkin)
+      if (arrayItem.nameOfSkin == req.params.nameOfSkin){
+        specificSkin = arrayItem
+      }
+
+    })
     res.render("skin", {
-      result
+      result, specificSkin
     })
   })
 })
