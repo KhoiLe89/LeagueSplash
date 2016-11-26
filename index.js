@@ -5,6 +5,7 @@ var request = require("request")
 var Skin = require("./db/schema.js").Skin
 var Champion = require("./db/schema.js").Champion
 
+
 app.set("view engine", "hbs")
 app.use("/assets", express.static("public"));
 

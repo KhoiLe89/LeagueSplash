@@ -8,17 +8,14 @@
   </head>
   <body>
 
-
-    {{#each skinData}}
-
-<a href="/champions/{{this.name}}"> <h3> {{this.name}}</h3> <a>
-      {{#each this.skins}}
-
-     <img src= "{{this.skinImg}}">
-
+    <div class="homeSkinContainer">
+      {{#each skinData}}
+       <h3 ><a class="homeNames" href="/champions/{{this.name}}"> {{this.name}} <a></h3>
+        {{#each this.skins}}
+       <img class="homeImg" src= "{{this.skinImg}}">
+        {{/each}}
       {{/each}}
-    {{/each}}
-
+    </div>
 
   </body>
 </html>
