@@ -2,16 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/assets/css/style.css" />
     <title></title>
   </head>
   <body>
-    <h3>{{championData.name}}</h3>
-    <div class="skins_container">
+    <div class="champion_container">
+      <h3 class="championName">{{championData.name}}</h3>
         {{#each championData.skins}}
-        <div class="skin_box">
-        <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img src="{{this.skinImg}}"></a>
-        RP: {{this.price}} Release Date: {{this.releaseDate}}
+        <div class="champion_box">
+        <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img class="championImg" src="{{this.skinImg}}"></a>
+      {{this.nameOfSkin}}  RP: {{this.price}} Release Date: {{this.releaseDate}}
       </div>
         {{/each}}
     <div>

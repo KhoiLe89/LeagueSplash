@@ -1,9 +1,24 @@
+* {
+  margin: 0;
+}
+nav{
+  background-color: #011638;
+  height: 8vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /*position: fixed;*/
+}
+#logo{
+  height: 33px;
+  width: 33px;
+  margin: 5px;
+}
 body{
-  background-color: #0C326E;
+  background-color: #0D21A1;
 }
 img {
-  height: 15%;
-  width: 15%;
+
 }
 /* home page*/
 .homeSkinContainer{
@@ -15,25 +30,45 @@ img {
 }
 a{
   text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
 }
 .homeNames{
-  color: #FFC600;
-
+  color: #F0C808;
+  font-family: 'Ubuntu', sans-serif;
 
 }
 .homeImg{
-  border: 5px solid #152339;
+  border: 5px solid #011638;
+  height: 15%;
+  width: 15%;
 }
-.skins_container{
-  /*border: 1px solid red;*/
-  height: 600px;
-  width: 100vw;
-  display: flex;
-  align-items: center;
+/* champion page */
+.championName{
+  color: #F0C808;
 
+  font-family: 'Ubuntu', sans-serif;
 }
-.skin_box{
-  /*border: 1px solid red;*/
+.championImg{
+  height: 75%;
+  width: 75%;
+  border: 5px solid #011638;
+  transition: 0.3s ease;
+}
+.championImg:hover {
+    transform: scale(1.5, 1.5);
+    opacity: 1;
+}
+.champion_container{
+  margin: auto;
+  height: 600px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.champion_box{
+
   height: 300px;
   width: 300px;
   display: flex;
