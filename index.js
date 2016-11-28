@@ -107,7 +107,7 @@ app.get("/champions/:name/:nameOfSkin", (req, res) => {
       }
 
     })
-    res.render("skinSpotlight", {
+    res.render("skin", {
       result, specificSkin
     })
   })

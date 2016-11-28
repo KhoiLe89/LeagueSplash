@@ -21,6 +21,13 @@
   width: 75vw;
   margin: auto;
 }
+.homeImg{
+  height: 200px;
+  width: 200px;
+}
+.homeNames{
+  color: #222222;
+}
 a{
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
@@ -36,7 +43,6 @@ a{
 }
 
 .img-circle{
->>>>>>> bootstrap
   transition: 0.3s ease;
 }
 .img-circle:hover {
