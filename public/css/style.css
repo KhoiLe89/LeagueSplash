@@ -9,6 +9,10 @@ nav{
   padding: 0;
   /*position: fixed;*/
 }
+#rpLogo{
+  height: 15px;
+  width: 15px;
+}
 #logo{
   height: 33px;
   width: 33px;
@@ -17,12 +21,17 @@ nav{
 body{
   background-color: #0D21A1;
 }
-img {
+
+/* home page*/
+.whatsNewContainer{
+  border: 1px solid red;
+  height: 200px;
+  width: 75vw;
+  margin: auto;
 
 }
-/* home page*/
 .homeSkinContainer{
-  /*border: 1px solid red;*/
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   width: 75vw;
@@ -42,14 +51,14 @@ a{
   height: 15%;
   width: 15%;
 }
+
 /* champion page */
 .championName{
   color: #F0C808;
-
   font-family: 'Ubuntu', sans-serif;
 }
 .championImg{
-  height: 75%;
+  height: 65%;
   width: 75%;
   border: 5px solid #011638;
   transition: 0.3s ease;
@@ -59,20 +68,32 @@ a{
     opacity: 1;
 }
 .champion_container{
+
   margin: auto;
   height: 600px;
   width: 75%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   justify-content: center;
 }
 .champion_box{
 
   height: 300px;
-  width: 300px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+
+
+}
+.championInfo{
+  color: #F0C808;
+  font-family: 'Ubuntu', sans-serif;
+}
+.championInfoBox{
+
+  height: 100%;
+  width: 800px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

@@ -5,12 +5,16 @@
     <title></title>
   </head>
   <body>
+    <h3 class="championName">{{championData.name}}</h3>
     <div class="champion_container">
-      <h3 class="championName">{{championData.name}}</h3>
         {{#each championData.skins}}
         <div class="champion_box">
         <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img class="championImg" src="{{this.skinImg}}"></a>
-      {{this.nameOfSkin}}  RP: {{this.price}} Release Date: {{this.releaseDate}}
+          <div class="championInfoBox">
+            <p class="championInfo"> {{this.nameOfSkin}} </p>
+            <p class="championInfo"> <img id="rpLogo"src="/assets/images/rp.png"> {{this.price}} </p>
+            <p class="championInfo"> <strong>Release Date:</strong> {{this.releaseDate}}</p>
+          </div>
       </div>
         {{/each}}
     <div>

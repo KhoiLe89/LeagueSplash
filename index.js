@@ -20,7 +20,7 @@ app.get("/champions", (req, res) => {
      if(err) {
        console.log("error", err)
      }
-     var championData = JSON.parse(body);
+     var championData = JSON.parse(body)
      var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
      var champions = championData.data
      let championName = []
@@ -102,7 +102,7 @@ app.get("/champions/:name/:nameOfSkin", (req, res) => {
       }
 
     })
-    res.render("skin", {
+    res.render("skinSpotlight", {
       result, specificSkin
     })
   })
