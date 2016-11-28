@@ -82,6 +82,7 @@ app.get("/test", (req, res) => {
 
       })
       console.log(championPics)
+
       res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
      })
    })
