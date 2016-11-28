@@ -13,10 +13,10 @@ app.engine('hbs', hbs({extname:'hbs', defaultLayout:'layout-main.hbs'}));
 app.listen("3001", () => {
   console.log("express is working!")
 })
+// app.get("/test", (req, res) => {
+//   res.render('test')
+// })
 app.get("/test", (req, res) => {
-  res.render('test')
-})
-app.get("/champions", (req, res) => {
    var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
    request(url, function(err, response, body) {
      var championData = JSON.parse(body)
@@ -77,7 +77,7 @@ app.get("/champions", (req, res) => {
         }
       })
 
-      res.render("home", {champions, championPic, skinData, skinInfo, unique, uniquePics})
+      res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics})
      })
    })
 })
