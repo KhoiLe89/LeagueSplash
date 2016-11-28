@@ -76,8 +76,13 @@ app.get("/test", (req, res) => {
           }
         }
       })
+      uniquePics.forEach(function(uniquePicsItem){
+      console.log(uniquePicsItem.full)
+      championPics.push(uniquePicsItem.full)
 
-      res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics})
+      })
+      console.log(championPics)
+      res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
      })
    })
 })
