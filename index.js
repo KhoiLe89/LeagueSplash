@@ -13,13 +13,12 @@ app.engine('hbs', hbs({extname:'hbs', defaultLayout:'layout-main.hbs'}));
 app.listen("3001", () => {
   console.log("express is working!")
 })
-
-app.get("/champions", (req, res) => {
+// app.get("/test", (req, res) => {
+//   res.render('test')
+// })
+app.get("/test", (req, res) => {
    var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
    request(url, function(err, response, body) {
-     if(err) {
-       console.log("error", err)
-     }
      var championData = JSON.parse(body)
      var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
      var champions = championData.data
@@ -77,8 +76,14 @@ app.get("/champions", (req, res) => {
           }
         }
       })
+      uniquePics.forEach(function(uniquePicsItem){
+      console.log(uniquePicsItem.full)
+      championPics.push(uniquePicsItem.full)
 
-      res.render("home", {champions, championPic, skinData, skinInfo, unique, uniquePics})
+      })
+      console.log(championPics)
+
+      res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
      })
    })
 })
