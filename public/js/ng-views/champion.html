@@ -21,23 +21,22 @@
         {{/each}} -->
         <!-- START THE FEATURETTES -->
 
-<!-- {{#each championData.skins}} -->
-{{vm.skins}}
+
 <hr class="featurette-divider">
 
-<div class="row featurette">
+<div class="row featurette" ng-repeat="championSkin in vm.championSkins.skins">
   <div class="col-md-7">
-    <h2 class="featurette-heading"><span class="text-muted">{{this.nameOfSkin}}</span></h2>
-    <p class="lead">Release Date: {{this.releaseDate}}</p>
-    <p class="lead">RP {{this.price}}</p>
+    <h2 class="featurette-heading"><span class="text-muted">{{championSkin.nameOfSkin}}</span></h2>
+    <p class="lead">Release Date: {{championSkin.releaseDate}}</p>
+    <p class="lead">RP {{championSkin.price}}</p>
 
   </div>
   <div class="col-md-5">
-  <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img class="featurette-image img-responsive center-block" src="{{this.skinImg}}" alt="Generic placeholder image"></a>
+  <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img class="featurette-image img-responsive center-block" src="{{championSkin.skinImg}}" alt="Generic placeholder image"></a>
   </div>
 </div>
 <hr class="featurette-divider">
-<!-- {{/each}} -->
+
 
 <!-- <div class="row featurette">
   <div class="col-md-7 col-md-push-5">

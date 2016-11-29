@@ -23,6 +23,7 @@ angular
   .controller("championCtrl", [
     "$state",
     "ChampionFactory",
+    "$stateParams",
     championController
   ])
 
@@ -60,10 +61,10 @@ function indexController ($state, SkinFactory){
 
 }
 
-function championController($state, ChampionFactory){
+function championController($state, ChampionFactory, $stateParams){
   console.log("Champion controller working")
   ChampionFactory
-    .query()
+    .get({name: $stateParams.name})
     .$promise
-    .then(skins => this.skins = skins)
+    .then(championSkins => this.championSkins = championSkins)
 }
