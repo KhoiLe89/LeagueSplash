@@ -16,7 +16,10 @@ app.listen("3001", () => {
 // app.get("/test", (req, res) => {
 //   res.render('test')
 // })
-app.get("/test", (req, res) => {
+app.get("/", function(req, res){
+  res.render("index")
+})
+app.get("/api/champions", (req, res) => {
    var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
    request(url, function(err, response, body) {
      var championData = JSON.parse(body)
@@ -83,16 +86,18 @@ app.get("/test", (req, res) => {
       })
       console.log(championPics)
 
-      res.render("test", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
+      // res.render("index", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
+      res.json(skinData)
      })
    })
 })
 
-app.get("/champions/:name", (req, res) => {
+app.get("/api/champions/:name", (req, res) => {
   Champion.findOne({name: req.params.name}).then((championData) => {
-    res.render("champion", {
-      championData
-    })
+    // res.render("champion", {
+    //   championData
+    // })
+    res.json(championData)
   })
 })
 
@@ -107,9 +112,10 @@ app.get("/champions/:name/:nameOfSkin", (req, res) => {
       }
 
     })
-    res.render("skin", {
-      result, specificSkin
-    })
+    // res.render("skin", {
+    //   result, specificSkin
+    // })
+    res.json(specificSkin)
   })
 })
 
@@ -122,9 +128,10 @@ app.get("/champions/:name/:nameOfSkin/spotlight", (req, res) => {
         specificSkin = arrayItem
       }
     })
-    res.render("spotlight", {
-      result, specificSkin
-    })
+    // res.render("spotlight", {
+    //   result, specificSkin
+    // })
+    res.json(specificSkin)
   })
 
 })
