@@ -15,6 +15,10 @@ angular
     "$resource",
     ChampionFactoryFunction
   ])
+  .factory("SpotlightFactory", [
+    "$resource",
+    SpotlightFactoryFunction
+  ])
   .controller("indexCtrl", [
     "$state",
     "SkinFactory",
@@ -25,6 +29,12 @@ angular
     "ChampionFactory",
     "$stateParams",
     championController
+  ])
+  .controller("spotlightCtrl", [
+    "$state",
+    "SpotlightFactory",
+    "$stateParams",
+    spotlightController
   ])
 
 function Router ($stateProvider) {
@@ -41,6 +51,12 @@ function Router ($stateProvider) {
       controller: "championCtrl",
       controllerAs: "vm"
     })
+    .state("spotlight", {
+      url: "/champions/:name/:nameOfSkin",
+      templateUrl: "/assets/js/ng-views/skin.html",
+      controller: "spotlightCtrl",
+      controllerAs: "vm"
+    })
 }
 function SkinFactoryFunction($resource) {
   return $resource("/api/champions", {}, {   //this is from the express side? /:name
@@ -51,6 +67,9 @@ function ChampionFactoryFunction($resource){
   return $resource("/api/champions/:name", {}, {   //this is from the express side? /:name
     update: {method: "put"}
   })
+}
+function SpotlightFactoryFunction($resource){
+  return $resource("/api/champions/:name/:nameOfSkin")
 }
 function indexController ($state, SkinFactory){
   console.log("index controller working")
@@ -67,4 +86,11 @@ function championController($state, ChampionFactory, $stateParams){
     .get({name: $stateParams.name})
     .$promise
     .then(championSkins => this.championSkins = championSkins)
+}
+function spotlightController($state, SpotlightFactory, $stateParams){
+  console.log("Spotlight Controller working")
+  SpotlightFactory
+    .get({name: $stateParams.name, nameOfSkin: $stateParams.nameOfSkin})
+    .$promise
+    .then(spotlight => this.spotlight = spotlight)
 }
