@@ -17,7 +17,76 @@ app.listen("3001", () => {
 //   res.render('test')
 // })
 app.get("/", function(req, res){
-  res.render("index")
+  var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
+  request(url, function(err, response, body) {
+    var championData = JSON.parse(body)
+    var championPic = "http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/"
+    var champions = championData.data
+    let championName = []
+    let championPics = []
+
+    //for champion names
+    for (var i in champions){
+      var result = champions[i]
+      for (var prop in result){
+         if (prop === "name"){
+           championName.push(result[prop])
+           var unique = championName.filter(function(elem, index, self) {
+             return index == self.indexOf(elem);
+           })
+         }
+         else{
+           console.log("nope")
+         }
+      }
+    }
+    //for champion pictures
+    for (var i in champions){
+      var result = champions[i]
+      for (var prop in result){
+         if (prop === "image"){
+           championPics.push(result[prop])
+           var uniquePics = championPics.filter(function(elem, index, self) {
+             return index == self.indexOf(elem);
+           })
+
+         }
+         else{
+           console.log("nope")
+         }
+      }
+    }
+
+    Champion.find({}).then((skinData) => {
+      console.log(champions)
+      let skinInfo = []
+      skinData.forEach(function (result) {
+       //  console.log(result)
+        result.skins.forEach((skinArrayKeys) => {
+          skinInfo.push(skinArrayKeys)
+        })
+       for (var i in skinInfo){
+
+         for (var o in unique){
+           if (unique[o]== skinInfo[i].name){
+             console.log(unique[o] + " = " + skinInfo[i].skinImg) //unique[o] is each name in the array and skinInfo[i] is each object
+              unique[o] = skinInfo[i].skinImg
+
+           }
+         }
+       }
+     })
+     uniquePics.forEach(function(uniquePicsItem){
+     console.log(uniquePicsItem.full)
+     championPics.push(uniquePicsItem.full)
+
+     })
+     console.log(championPics)
+
+     res.render("index", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
+     // res.json(skinData)
+    })
+  })
 })
 app.get("/api/champions", (req, res) => {
    var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
@@ -128,10 +197,10 @@ app.get("/champions/:name/:nameOfSkin/spotlight", (req, res) => {
         specificSkin = arrayItem
       }
     })
-    // res.render("spotlight", {
-    //   result, specificSkin
-    // })
-    res.json(specificSkin)
+    res.render("spotlight", {
+      result, specificSkin
+    })
+    // res.json(specificSkin)
   })
 
 })

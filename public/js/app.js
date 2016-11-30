@@ -52,19 +52,20 @@ function Router ($stateProvider) {
       controllerAs: "vm"
     })
     .state("spotlight", {
-      url: "/champions/:name/:nameOfSkin",
-      templateUrl: "/assets/js/ng-views/skin.html",
+      url: "/champions/:name/:nameOfSkin/spotlight",
+      templateUrl: "/views/skin.hbs",
       controller: "spotlightCtrl",
       controllerAs: "vm"
     })
+
 }
 function SkinFactoryFunction($resource) {
-  return $resource("/api/champions", {}, {   //this is from the express side? /:name
+  return $resource("/api/champions", {}, {
     update: {method: "put"}
   })
 }
 function ChampionFactoryFunction($resource){
-  return $resource("/api/champions/:name", {}, {   //this is from the express side? /:name
+  return $resource("/api/champions/:name", {}, {
     update: {method: "put"}
   })
 }
@@ -74,10 +75,9 @@ function SpotlightFactoryFunction($resource){
 function indexController ($state, SkinFactory){
   console.log("index controller working")
   SkinFactory
-    .query() //get all the data from the /api/candidates
-    .$promise // angular was written before "then"  so we just need $promise
+    .query() 
+    .$promise
     .then(champions => this.champions = champions)
-
 }
 
 function championController($state, ChampionFactory, $stateParams){
