@@ -13,6 +13,7 @@
 #rpLogo{
   height: 15px;
   width: 15px;
+  opacity: .8;
 }
 .homeSkinContainer{
   border: 1px solid red;
@@ -73,7 +74,6 @@ a{
   font-family: 'Ubuntu', sans-serif;
 }
 .championInfoBox{
-
   height: 100%;
   width: 800px;
   display: flex;
@@ -85,6 +85,7 @@ a{
   width: 200px;
 }
 .spotlightContainer{
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,7 +180,7 @@ a{
  ------------------------- */
 
  .featurette-divider {
-   margin: 70px 0; /* Space out the Bootstrap <hr> more */
+   margin: 80px 0; /* Space out the Bootstrap <hr> more */
  }
 
  /* Thin out the marketing headings */

@@ -11,7 +11,9 @@ var SkinSchema = mongoose.Schema({
 })
 var ChampionSchema = mongoose.Schema({
   name: String,
-  skins: [SkinSchema]
+  skins: [SkinSchema],
+  lore: String,
+  png: String
 })
 
 var Skin = mongoose.model("Skin", SkinSchema)

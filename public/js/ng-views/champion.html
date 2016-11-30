@@ -28,11 +28,13 @@
   <div class="col-md-7">
     <h2 class="featurette-heading"><span class="text-muted">{{championSkin.nameOfSkin}}</span></h2>
     <p class="lead">Release Date: {{championSkin.releaseDate}}</p>
-    <p class="lead">RP {{championSkin.price}}</p>
+    <p class="lead"><img id="rpLogo" src="/assets/images/rp.png"> {{championSkin.price}}</p>
+    <p><a class="btn btn-default" href="/champions/{{championSkin.name}}/{{championSkin.nameOfSkin}}/spotlight" role="button">View Spotlight &raquo;</a></p>
 
+<hr class="featurette-divider">
   </div>
   <div class="col-md-5">
-  <a href="/champions/{{this.name}}/{{this.nameOfSkin}}"><img class="featurette-image img-responsive center-block" src="{{championSkin.skinImg}}" alt="Generic placeholder image"></a>
+  <a href="/champions/{{championSkin.name}}/{{championSkin.nameOfSkin}}/spotlight"><img class="featurette-image img-responsive center-block" src="{{championSkin.skinImg}}" alt="Generic placeholder image"></a>
   </div>
 </div>
 <hr class="featurette-divider">

@@ -61,54 +61,38 @@
     <span class="sr-only">Next</span>
   </a>
 </div><!-- /.carousel -->
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette"data-ng-repeat="champion in vm.champions">
+  <div class="col-md-7 col-md-push-5" >
+    <h2 class="featurette-heading">{{champion.name}}</h2>
+    <p class="lead">{{champion.lore}}</p>
+    <p><a class="btn btn-default" href="/#/champions/{{champion.name}}" role="button">View Skin &raquo;</a></p>
+  </div>
+  <div class="col-md-5 col-md-pull-7">
+    <img class="featurette-image img-responsive center-block" ng-src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{champion.png}}" alt="Generic placeholder image" width="250" height="250">
+    <hr class="featurette-divider">
+  </div>
+</div>
 
 
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-<!-- {{vm.champions.length}} -->
-<!-- {{champion in vm.champions}}
-{{skin in champion.skins}} -->
-        <!-- {{#each skinData}}
-        {{#each this.skins}} -->
-        <div class="col-lg-4" data-ng-repeat="champion in vm.champions">
-        <p data-ng-repeat="skin in champion.skins">  <img class="img-circle" src="{{skin.skinImg}}" alt="Generic placeholder image" width="140" height="140"></p>
-          <h2>{{champion.name}}</h2>
-          <p><a class="btn btn-default" href="/champions/{{this.name}}/{{this.nameOfSkin}}" role="button">View Skin &raquo;</a></p>
-        </div>
-        <!-- {{/each}}
-        {{/each}} -->
-
-        <!-- <div class="homeSkinContainer">
-          {{#each skinData}}
-           <h3 ><a class="homeNames" href="/champions/{{this.name}}"> {{this.name}} <a></h3>
-            {{#each this.skins}}
-           <img class="homeImg" src= "{{this.skinImg}}">
-            {{/each}}
-          {{/each}}
+<!-- /END THE FEATURETTES -->
+        <!-- <div class="col-lg-4" data-ng-repeat="champion in vm.champions">
+          <div data-ng-repeat="skin in champion.skins">  <img class="img-circle" src="{{skin.skinImg}}" alt="Generic placeholder image" width="140" height="140">
+            <h2>{{champion.name}}</h2>
+            <p><a class="btn btn-default" href="/champions/{{champion.name}}/{{skin.nameOfSkin}}/spotlight" role="button">View Skin &raquo;</a></p>
+          </div>
         </div> -->
 
 
-    <!-- </div>
-    {{#each championPics}}
-
-    <div class="col-lg-4">
-      <img class="img-circle" src="http://ddragon.leagueoflegends.com/cdn/6.22.1/img/champion/{{this.full}}" alt="Generic placeholder image" width="140" height="140">
-      <h2>{{this.nameOfSkin}}</h2>
-      <p><a class="btn btn-default" href="/champions/{{this.name}}/{{this.nameOfSkin}}" role="button">View Skin &raquo;</a></p>
-    </div>
-
-    {{/each}}
-  </div> -->
-
       <!-- FOOTER -->
-      <footer>
+      <!-- <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+      </footer> -->
 
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript

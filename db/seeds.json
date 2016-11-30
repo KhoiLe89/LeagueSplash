@@ -1,6 +1,8 @@
 [
   {
       "name": "Aatrox",
+      "png": "Aatrox.png",
+      "lore": "Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold.",
       "skins":
       [ {"name": "Aatrox", "nameOfSkin": "Justicar Aatrox", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-justicar.jpg", "price": 975, "releaseDate": "June 13, 2013", "spotlight": "H-r1SlzLVaE"},
         {"name": "Aatrox", "nameOfSkin": "Mecha Aatrox", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/aatrox-mecha.jpg", "price": 1350, "releaseDate": "July 24, 2014", "spotlight":"Og8MMqbvPXg"},
@@ -9,15 +11,9 @@
       ]
     },
     {
-      "name": "Jax",
-      "skins":
-      [
-        {"name": "Jax", "nameOfSkin": "The Mighty Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-the-mighty.jpg", "price": 520, "releaseDate": "March 2, 2010", "spotlight": "973_wLm6EA0"},
-        {"name": "Jax", "nameOfSkin": "Vandal Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-vandal.jpg", "price": 520, "releaseDate": "Februrary 24, 2010", "spotlight":"hzQQdHctR-c"}
-      ]
-    },
-    {
       "name": "Ahri",
+      "png": "Ahri.png",
+      "lore": "Unlike other foxes that roamed the woods of southern Ionia, Ahri had always felt a strange connection to the magical world around her; a connection that was somehow incomplete. Deep inside, she felt the skin she had been born into was an ill fit for her and dreamt of one day becoming human.",
       "skins":
       [
         {"name": "Ahri", "nameOfSkin": "Dynasty Ahri", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/ahri-dynasty.jpg", "price": 975, "releaseDate": "December 14, 2011", "spotlight":"mWDPpoiNB74" },
@@ -26,6 +22,8 @@
     },
     {
       "name": "Akali",
+      "png": "Akali.png",
+      "lore": "Akali is one of these shadow warriors, entrusted with the sacred duty of Pruning the Tree - eliminating those who threaten the equilibrium of Valoran. ",
       "skins":
       [
         {"name": "Akali", "nameOfSkin": "Crimson Akali", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/akali-crimson.jpg", "price": 520, "releaseDate": "May 11, 2010", "spotlight":"yqY7EDEcLjo" },
@@ -34,6 +32,8 @@
     },
     {
       "name": "Alistar",
+      "png": "Alistar.png",
+      "lore": "As the mightiest warrior to ever emerge from the Minotaur tribes of the Great Barrier, Alistar defended his tribe from Valoran's many dangers; that is, until the coming of the Noxian army.",
       "skins":
       [
         {"name": "Alistar", "nameOfSkin": "Black Alistar", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/alistar-black.jpg", "price": 0, "releaseDate": "July 14, 2009", "spotlight":"dE_mmZzDlxE" },
@@ -42,6 +42,8 @@
     },
     {
       "name": "Amumu",
+      "png": "Amumu.png",
+      "lore": "A lonely and melancholy soul from ancient Shurima, Amumu roams the world in search of a friend. Cursed by an ancient spell, he is doomed to remain alone forever, as his touch is death and his affection ruin.",
       "skins":
       [
         {"name": "Amumu", "nameOfSkin": "Pharaoh Amumu", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/amumu-pharaoh.jpg", "price": 520, "releaseDate": "Februrary 2, 2010", "spotlight":"M8d5JT_NuqY" },
@@ -50,10 +52,22 @@
     },
     {
       "name": "Anivia",
+      "png": "Anivia.png",
+      "lore": "Anivia is a being of the coldest winter, a mystical embodiment of ice magic, and an ancient protector of the Freljord. She commands all the power and fury of the land itself, calling the snow and bitter wind to defend her home from those who would harm it.",
       "skins":
       [
         {"name": "Anivia", "nameOfSkin": "Team Spirit Anivia", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/anivia-team-spirit.jpg", "price": 520, "releaseDate": "March 2, 2010", "spotlight":"i5sX9r4olBc" },
         {"name": "Anivia", "nameOfSkin": "Bird of Prey Anivia", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/anivia-bird-of-prey.jpg", "price": 520, "releaseDate": "May 3, 2010", "spotlight":"0Ksp8-MtuwQ" }
+      ]
+    },
+    {
+      "name": "Jax",
+      "png": "Jax.png",
+      "lore": "Before joining the League, Jax was an unremarkable soldier-for-hire.",
+      "skins":
+      [
+        {"name": "Jax", "nameOfSkin": "The Mighty Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-the-mighty.jpg", "price": 520, "releaseDate": "March 2, 2010", "spotlight": "973_wLm6EA0"},
+        {"name": "Jax", "nameOfSkin": "Vandal Jax", "skinImg": "http://www.mobafire.com/images/champion/skins/landscape/jax-vandal.jpg", "price": 520, "releaseDate": "Februrary 24, 2010", "spotlight":"hzQQdHctR-c"}
       ]
     }
 ]
