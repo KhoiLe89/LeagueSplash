@@ -1,5 +1,5 @@
 var mongoose = require("mongoose")
-mongoose.connect('mongodb://heroku_wcfgnhm2:497t721boiaangh3mnn2ih2hdb@ds119768.mlab.com:19768/heroku_wcfgnhm2')
+mongoose.connect(process.env.MONGODB_URI)
 
 var db = mongoose.connection
 
