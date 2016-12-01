@@ -1,9 +1,9 @@
 var mongoose = require("mongoose")
-mongoose.connect('mongodb://localhost/leagueskins')
+mongoose.connect('mongodb://localhost/leagueskins')  //DB name
 
 var db = mongoose.connection
 
-db.on('error',  err =>{
+db.on('error',  err =>{  //if DB errors out..
   console.log(err)
 })
 

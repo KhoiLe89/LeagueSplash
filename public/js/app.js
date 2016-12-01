@@ -61,7 +61,7 @@ function Router ($stateProvider) {
 }
 function SkinFactoryFunction($resource) {
   return $resource("/api/champions", {}, {
-    update: {method: "put"}
+    update: {method: "put"} // don't need these put statements(no crud functionality as of yet)
   })
 }
 function ChampionFactoryFunction($resource){
@@ -75,15 +75,15 @@ function SpotlightFactoryFunction($resource){
 function indexController ($state, SkinFactory){
   console.log("index controller working")
   SkinFactory
-    .query() 
+    .query()  // query the data, or in this case the factory which handles the API
     .$promise
-    .then(champions => this.champions = champions)
+    .then(champions => this.champions = champions) // need to know what this is doing exactly...
 }
 
 function championController($state, ChampionFactory, $stateParams){
   console.log("Champion controller working")
   ChampionFactory
-    .get({name: $stateParams.name})
+    .get({name: $stateParams.name})  // "GET" call the API via factory by one parameter
     .$promise
     .then(championSkins => this.championSkins = championSkins)
 }

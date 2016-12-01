@@ -170,7 +170,6 @@ app.get("/api/champions/:name", (req, res) => {
   })
 })
 
-// i can get this page to render the speficic object of skins, but can't get the nameOfSkin parameter
 app.get("/api/champions/:name/:nameOfSkin", (req, res) => {
   Champion.findOne({name: req.params.name}).then((result) => {
   var resultSkins = result.skins

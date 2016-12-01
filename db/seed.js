@@ -10,4 +10,4 @@ Champion.remove({}).then(() => {
   Champion.collection.insert(seedData).then(() => process.exit())
 }).catch(err => console.log(err))
 
-//need to remove all seeds before entering new ones. We've only pushed in Justicar not mecha yet.
+//need to remove all seeds before entering new ones. 
