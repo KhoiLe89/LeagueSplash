@@ -9,7 +9,7 @@ var Champion = require("./db/schema.js").Champion
 app.set("view engine", "hbs")
 app.use("/assets", express.static("public"));
 app.engine('hbs', hbs({extname:'hbs', defaultLayout:'layout-main.hbs'}));
-
+app.listen(process.env.PORT || 4200)
 app.listen("3001", () => {
   console.log("express is working!")
 })
