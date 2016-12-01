@@ -1,5 +1,5 @@
 var mongoose = require("mongoose")
-mongoose.connect('mongodb://dbuser:dbpass@host:port/leagueskins')
+mongoose.connect('mongodb://heroku_wcfgnhm2:497t721boiaangh3mnn2ih2hdb@ds119768.mlab.com:19768/heroku_wcfgnhm2')
 
 var db = mongoose.connection
 
