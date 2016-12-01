@@ -13,9 +13,7 @@ app.engine('hbs', hbs({extname:'hbs', defaultLayout:'layout-main.hbs'}));
 app.listen("3001", () => {
   console.log("express is working!")
 })
-// app.get("/test", (req, res) => {
-//   res.render('test')
-// })
+
 app.get("/", function(req, res){
   var url = "https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&api_key=RGAPI-fad0a8b6-b0e0-4393-b52f-136a9ee42cdc"
   request(url, function(err, response, body) {
@@ -25,7 +23,7 @@ app.get("/", function(req, res){
     let championName = []
     let championPics = []
 
-    //for champion names
+
     for (var i in champions){
       var result = champions[i]
       for (var prop in result){
@@ -40,7 +38,7 @@ app.get("/", function(req, res){
          }
       }
     }
-    //for champion pictures
+
     for (var i in champions){
       var result = champions[i]
       for (var prop in result){
@@ -69,7 +67,7 @@ app.get("/", function(req, res){
 
          for (var o in unique){
            if (unique[o]== skinInfo[i].name){
-             console.log(unique[o] + " = " + skinInfo[i].skinImg) //unique[o] is each name in the array and skinInfo[i] is each object
+             console.log(unique[o] + " = " + skinInfo[i].skinImg)
               unique[o] = skinInfo[i].skinImg
 
            }
@@ -84,7 +82,7 @@ app.get("/", function(req, res){
      console.log(championPics)
 
      res.render("index", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
-     // res.json(skinData)
+
     })
   })
 })
@@ -97,7 +95,7 @@ app.get("/api/champions", (req, res) => {
      let championName = []
      let championPics = []
 
-     //for champion names
+
      for (var i in champions){
        var result = champions[i]
        for (var prop in result){
@@ -112,7 +110,7 @@ app.get("/api/champions", (req, res) => {
           }
        }
      }
-     //for champion pictures
+
      for (var i in champions){
        var result = champions[i]
        for (var prop in result){
@@ -133,29 +131,21 @@ app.get("/api/champions", (req, res) => {
        console.log(champions)
        let skinInfo = []
        skinData.forEach(function (result) {
-        //  console.log(result)
          result.skins.forEach((skinArrayKeys) => {
            skinInfo.push(skinArrayKeys)
          })
         for (var i in skinInfo){
-
           for (var o in unique){
             if (unique[o]== skinInfo[i].name){
-              console.log(unique[o] + " = " + skinInfo[i].skinImg) //unique[o] is each name in the array and skinInfo[i] is each object
+              console.log(unique[o] + " = " + skinInfo[i].skinImg)
                unique[o] = skinInfo[i].skinImg
-
             }
           }
         }
       })
       uniquePics.forEach(function(uniquePicsItem){
-      console.log(uniquePicsItem.full)
       championPics.push(uniquePicsItem.full)
-
       })
-      console.log(championPics)
-
-      // res.render("index", {champions, championPic, skinData, skinInfo, unique, uniquePics, championPics})
       res.json(skinData)
      })
    })
@@ -163,14 +153,10 @@ app.get("/api/champions", (req, res) => {
 
 app.get("/api/champions/:name", (req, res) => {
   Champion.findOne({name: req.params.name}).then((championData) => {
-    // res.render("champion", {
-    //   championData
-    // })
     res.json(championData)
   })
 })
 
-// i can get this page to render the speficic object of skins, but can't get the nameOfSkin parameter
 app.get("/api/champions/:name/:nameOfSkin", (req, res) => {
   Champion.findOne({name: req.params.name}).then((result) => {
   var resultSkins = result.skins
@@ -179,11 +165,7 @@ app.get("/api/champions/:name/:nameOfSkin", (req, res) => {
       if (arrayItem.nameOfSkin == req.params.nameOfSkin){
         specificSkin = arrayItem
       }
-
     })
-    // res.render("skin", {
-    //   result, specificSkin
-    // })
     res.json(specificSkin)
   })
 })
@@ -200,7 +182,5 @@ app.get("/champions/:name/:nameOfSkin/spotlight", (req, res) => {
     res.render("spotlight", {
       result, specificSkin
     })
-    // res.json(specificSkin)
   })
-
 })
