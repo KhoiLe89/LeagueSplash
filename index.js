@@ -34,7 +34,7 @@ app.get("/", function(req, res){
            })
          }
          else{
-          //  console.log("nope")
+           console.log("nope")
          }
       }
     }
@@ -50,7 +50,7 @@ app.get("/", function(req, res){
 
          }
          else{
-          //  console.log("nope")
+           console.log("nope")
          }
       }
     }
